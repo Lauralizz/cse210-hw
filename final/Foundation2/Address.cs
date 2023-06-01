@@ -1,6 +1,6 @@
-using System;
+using System; 
 
-public class Address 
+public class Address
 {
     private string streetAddress;
     private string city;
@@ -17,11 +17,12 @@ public class Address
 
     public bool IsInUSA()
     {
-        return country == "USA";
+        return country.Equals("USA", StringComparison.OrdinalIgnoreCase);
     }
 
     public string GetFullAddress()
     {
-        return $"{streetAddress}\n{city}, {state}\n{country}";
+        string fullAddress = $"{streetAddress}\n{city}, {state}\n{country}";
+        return fullAddress;
     }
-}  
+}
